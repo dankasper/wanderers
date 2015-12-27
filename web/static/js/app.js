@@ -19,3 +19,14 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+var ReactFooter = React.createClass({
+    render: function() {
+        return <h2>Hello from React!</h2>;
+    }
+});
+
+ReactDOM.render(
+    <ReactFooter/>,
+    document.getElementById('reactFooter')
+);
