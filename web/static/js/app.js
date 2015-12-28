@@ -22,11 +22,13 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 
 var ReactFooter = React.createClass({
     render: function() {
-        return <h2>Hello from React!</h2>;
+        return <h2 class="test-footer">Hello from React!</h2>;
     }
 });
 
+window.onload = function() {
 ReactDOM.render(
     <ReactFooter/>,
     document.getElementById('reactFooter')
 );
+};
