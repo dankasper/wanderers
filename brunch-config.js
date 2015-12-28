@@ -54,7 +54,7 @@ exports.config = {
     babel: {
       presets: ["es2015", "react"],
       // Do not use ES6 compiler in vendor code
-      ignore: [/web\/static\/vendor/, /bower_components/]
+      ignore: [/web\/static\/vendor/, /bower_components/],
       pattern: /\.(js|jsx)$/
     }
   },
