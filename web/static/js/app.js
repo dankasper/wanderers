@@ -20,15 +20,23 @@ import "deps/phoenix_html/web/static/js/phoenix_html"
 
 // import socket from "./socket"
 
-var ReactFooter = React.createClass({
-    render: function() {
-        return <h2 class="test-footer">Hello from React!</h2>;
-    }
+var LeafletMap = React.createClass({
+  render: function() {
+    return <div id="map"></div>;
+  },
+
+  componentDidMount: function() {
+    var map = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
+	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+	subdomains: 'abcd',
+	minZoom: 1,
+	maxZoom: 16,
+	ext: 'png'
+    }).addTo(map);
+  }
 });
 
 window.onload = function() {
-ReactDOM.render(
-    <ReactFooter/>,
-    document.getElementById('reactFooter')
-);
+  ReactDOM.render(<LeafletMap/>, document.getElementById("placeholder"));
 };

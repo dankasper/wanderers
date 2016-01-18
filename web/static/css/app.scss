@@ -1,0 +1,20 @@
+@import "../vendor/bourbon/bourbon";
+@import "../vendor/neat/neat";
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+html {
+    @include background( radial-gradient(ellipse 200% 100% at bottom, #660000, #330000 20%, black) no-repeat );
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    @include outer-container();
+}
